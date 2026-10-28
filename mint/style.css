@@ -1,0 +1,200 @@
+
+:root {
+  --navy-900: #08111f;
+  --navy-800: #0d1a2e;
+  --navy-700: #14243d;
+  --line: #24385a;
+  --text: #eef3fb;
+  --muted: #9bb0cc;
+  --sky: #52a5d0;
+  --bnb: #f0b90b;
+  --bnb-dark: #d9a50a;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; }
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: var(--text);
+  font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  background-color: var(--navy-900);
+  background-image:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(82, 165, 208, 0.25), transparent 70%),
+    repeating-linear-gradient(60deg,  transparent 0 89px, rgba(82, 165, 208, 0.07) 89px 90px),
+    repeating-linear-gradient(-60deg, transparent 0 89px, rgba(82, 165, 208, 0.07) 89px 90px),
+    repeating-linear-gradient(0deg,   transparent 0 77px, rgba(82, 165, 208, 0.07) 77px 78px);
+  background-attachment: fixed;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  padding: 36px 34px 34px;
+  background: linear-gradient(180deg, var(--navy-700), var(--navy-800));
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--bnb);
+  border-radius: var(--radius);
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.8);
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(82, 165, 208, 0.1);
+  color: var(--sky);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2.1rem, 7vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+  color: var(--muted);
+}
+
+/* Les deux sections sont une vraie séquence : 1. connecter, 2. minter */
+main { counter-reset: step; }
+
+section { position: relative; padding-left: 46px; }
+
+section + section {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
+section::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sky);
+  color: var(--navy-900);
+  font-weight: 800;
+}
+
+section + section::before { top: 26px; }
+
+h2 {
+  margin: 3px 0 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--navy-900);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+input:focus { border-color: var(--sky); }
+
+button {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+button:active:not(:disabled) { transform: translateY(1px); }
+
+#connectBtn {
+  background: transparent;
+  color: var(--sky);
+  border-color: var(--sky);
+}
+
+#connectBtn:hover { background: rgba(82, 165, 208, 0.15); }
+
+#mintBtn {
+  margin-top: 14px;
+  background: var(--bnb);
+  color: #1a1400;
+}
+
+#mintBtn:hover:not(:disabled) { background: var(--bnb-dark); }
+
+#mintBtn:disabled {
+  background: var(--navy-900);
+  color: var(--muted);
+  border-color: var(--line);
+  cursor: not-allowed;
+}
+
+#status {
+  margin: 14px 0 20px;
+  padding: 10px 14px;
+  background: rgba(82, 165, 208, 0.1);
+  border-left: 3px solid var(--sky);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+#status:empty { display: none; }
+
+.note {
+  margin: 28px 0 0;
+  padding: 12px 14px;
+  background: rgba(240, 185, 11, 0.08);
+  border: 1px solid rgba(240, 185, 11, 0.35);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--bnb);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .card { padding: 26px 18px; }
+  section { padding-left: 0; }
+  section::before { position: static; margin-bottom: 8px; }
+  section + section::before { top: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

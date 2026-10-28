@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mint mon NFT 42</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <span class="badge">42 × BNB Chain</span>
+    <h1>TokenizeArt 42</h1>
+    <p class="subtitle">Connecte ton wallet, puis mint ton NFT.</p>
+    <p id="status"></p>
+
+    <section>
+      <h2>Connecter le wallet</h2>
+      <button id="connectBtn">Connect Wallet</button>
+      <p id="network"></p>
+    </section>
+
+    <section>
+      <h2>Minter le NFT</h2>
+      <label for="tokenURI">Token URI</label>
+      <input id="tokenURI" value="ipfs://TON_CID_JSON" />
+      <button id="mintBtn" disabled>Mint NFT</button>
+    </section>
+
+    <p class="note">Utilise un réseau de test (par exemple BSC Testnet) : aucun vrai fonds n'est nécessaire.</p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -3,6 +3,10 @@
 **ID du contart**: 0xE0398adE4BD02b16895939BE49a5a692e190EFc7
 **Adresse du contart**: https://testnet.bscscan.com/address/0xE0398adE4BD02b16895939BE49a5a692e190EFc7
 https://testnet.bscscan.com/tx/0x382aa24c836e989a5bb35b7b21983f2a0f2388e247e4dd515cd98d4ca3a0209c
+**ID du contart bonus**: 0x407931B3111C214D87614CD10d6bF81fE6c32381
+**Adresse du contart**: https://testnet.bscscan.com/address/0x407931B3111C214D87614CD10d6bF81fE6c32381
+https://testnet.bscscan.com/tx/0x2a51778435c8f71bdfb49a82c08f85fea95b78e881f449ccee877715676bcedb
+https://testnet.bscscan.com/tx/0x72a804ee65875b96b301d54296cedf4ae71a16193d32c70909b853fc76be7067
 
 
 

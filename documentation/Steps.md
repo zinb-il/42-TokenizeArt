@@ -96,18 +96,18 @@ contract TokenizeArt42 is ERC721URIStorage, Ownable {
 
 # 4.Compiler et déployer avec Remix
 
-# 4.1 Compiler
+## 4.1 Compiler
 Ouvrez remix.ethereum.org, créez TokenizeArt42.sol et collez le code. Dans l'onglet Solidity Compiler, sélectionnez la version 0.8.20 (ou une version compatible 0.8.x), cliquez sur Compile.
 
 
-# 4.2 Déployer
+## 4.2 Déployer
 1. Dans l'onglet Deploy & Run Transactions, l'environnement sélectionne Injected Provider 1. MetaMask.
 1. Assurez-vous que MetaMask est connecté à BNB Smart Chain Testnet.
 1. Dans le menu déroulant Contract, sélectionnez TokenizeArt42, cliquez sur Deploy, confirmez dans MetaMask.
 1. Après le déploiement, copiez l'adresse du contrat depuis la zone Deployed Contracts en bas.
 
 
-# 4.3 Minter
+## 4.3 Minter
 1. Développez les fonctions du contrat déployé.
 1. Dans mintNFT, saisissez :
     - recipient : votre adresse MetaMask
@@ -116,3 +116,7 @@ Ouvrez remix.ethereum.org, créez TokenizeArt42.sol et collez le code. Dans l'on
 1. Après confirmation, appelez ownerOf(0) pour vérifier que le propriétaire est bien votre adresse — le sujet exige explicitement de pouvoir démontrer la vérification du propriétaire via ownerOf.
 
 
+# 5.Bonnus
+
+## 5.1 Complier et Depolyer et Minter
+Dans votre éditeur Remix, collez le code du fichier code/TokenizeArt42_bonus.sol, puis compilez-le et déployez-le. Enfin, mintez votre NFT (avec le deux fonction mintNFT et mintOnChain) : ce sont exactement les mêmes étapes que dans la partie 4. Cette fois, notre NFT est une image SVG convertie en base64 afin de respecter le principe de l'on-chain. Ainsi, notre NFT est directement stocké dans la blockchain, sans avoir besoin d'héberger l'image sur un réseau IPFS externe.
