@@ -1,0 +1,7 @@
+{
+  "name": "TokenizeArt 42-1337: Eagle",
+  "description": "Mon NFT TokenizeArt contient 42 et 1337, les deux nombres les plus proches de mon cœur. ",
+  "image": "ipfs://bafybeibvfcsnr3b7qcvoprz6hegwbtwhv5tdosaapmglwa7b4lpwm6t5r4",
+  "artist": "ziloughm",
+  "attributes": [{ "trait_type": "Artist", "value": "ziloughm" }]
+}
